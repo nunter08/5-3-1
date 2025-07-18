@@ -96,7 +96,7 @@ button:hover {
     font-weight: bold;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 300px) {
     .data-table td, .data-table th {
         font-size: 14px; /* Reduce font size */
         padding: 5px 10px; /* Reduce padding for smaller screen */
