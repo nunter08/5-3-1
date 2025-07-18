@@ -1,45 +1,97 @@
-/* General container styles */
-.container {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    margin: 0 auto;
+/* Reset some default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* Table Wrapper */
-.table-wrapper {
-    width: 100%;
-    overflow-x: hidden; /* Hide horizontal scroll */
+/* Body styling */
+body {
+    background-color: #b3d9f7; /* Pale blue background */
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
-/* Basic Table Styling */
+/* Container to center everything */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Note at the top */
+.note {
+    background-color: #ffeb3b; /* Light yellow background */
+    border: 1px solid #e2c100; /* Darker yellow border */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Styling input fields */
+.input-field {
+    padding: 10px;
+    width: 100%; /* Full width of the container */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Adds space between the input fields and buttons */
+}
+
+/* Button styling */
+button {
+    padding: 15px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 15px; /* Adds space between the buttons */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Button container to manage button layout */
+.button-container {
+    margin-top: 10px; /* Adds space between the inputs and the button container */
+}
+
+/* Styling the table */
 .data-table {
     width: 100%;
-    table-layout: auto; /* Ensure it adjusts based on content */
     border-collapse: collapse;
-}
-
-.data-table td, .data-table th {
-    padding: 6px; /* Reduce padding for smaller screens */
-    font-size: 14px; /* Reduce font size */
     text-align: center;
-    border: 1px solid #ddd; /* Optional: add borders to make it clearer */
+    margin-top: 40px; /* Added more space between input section and table */
 }
 
-/* On smaller screens (Mobile and smaller tablets) */
-@media (max-width: 767px) {
-    .data-table td, .data-table th {
-        font-size: 12px; /* Smaller font size for mobile */
-        padding: 4px 6px; /* Smaller padding */
-    }
+/* Styling table cells */
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #fafafa;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
 
-    /* Optional: Adjust table width for smaller screens */
-    .data-table {
-        width: 100%; /* Table takes full width */
-    }
+/* Fix for first row (header) */
+.data-table tr:first-child td {
+    background-color: #959896; /* Green for header row */
+    color: white; /* White text for better contrast */
+}
 
-    .container {
-        padding: 10px; /* Less padding to fit everything */
-    }
+/* Make all cells in the first row and column bold */
+.data-table tr:first-child td {
+    font-weight: bold;
+}
+.data-table td:first-child {
+    font-weight: bold;
 }
