@@ -95,3 +95,33 @@ button:hover {
 .data-table td:first-child {
     font-weight: bold;
 }
+
+/* Responsive styling for smaller screens */
+@media (max-width: 767px) {
+    /* Smaller font size for input fields and buttons */
+    .input-field {
+        font-size: 14px; /* Smaller font size */
+        padding: 8px; /* Slightly reduced padding */
+    }
+
+    button {
+        font-size: 14px; /* Smaller button font */
+        padding: 12px 14px; /* Reduced button padding */
+    }
+
+    /* Table font size and padding reduction */
+    .data-table td {
+        font-size: 14px; /* Smaller table font */
+        padding: 6px 8px; /* Reduced padding */
+    }
+
+    /* Reduce font size for the first row to fit */
+    .data-table tr:first-child td {
+        font-size: 14px; /* Smaller font for header */
+    }
+
+    /* Optional: Adjust container padding to make it fit better on small screens */
+    .container {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+}
