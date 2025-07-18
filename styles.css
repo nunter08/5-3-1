@@ -9,50 +9,40 @@
 /* Wrap the table in a scrollable container */
 .table-wrapper {
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto; /* Allows horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
 }
 
 .data-table {
     width: 100%;
-    table-layout: auto;
+    table-layout: fixed; /* Keeps table structure intact */
     border-collapse: collapse;
 }
 
 .data-table td, .data-table th {
     padding: 8px;
-    word-wrap: break-word;
+    text-align: center;
+    word-wrap: break-word; /* Prevent words from overflowing */
 }
 
-/* On smaller screens (max-width 767px) */
+/* Prevent the table from overflowing its container */
 @media (max-width: 767px) {
     .table-wrapper {
-        padding: 0 10px; /* Small padding */
+        padding: 0 10px; /* Padding to ensure it's not flush against screen edges */
     }
 
     .data-table {
         width: 100%;
-        table-layout: auto;
+        table-layout: auto; /* Adjust table layout */
     }
 
-    .data-table td {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 5px 10px;
-    }
-
-    .data-table tr {
-        display: block;
-        margin-bottom: 10px; /* Space between rows */
-    }
-
-    /* Optionally, reduce font sizes */
+    /* Optional: Adjust font size on smaller screens */
     .data-table td, .data-table th {
-        font-size: 14px;
+        font-size: 14px; /* Slightly smaller font on mobile */
+        padding: 6px; /* Reduce padding slightly on mobile */
     }
 
-    .data-table th {
-        font-size: 15px; /* Slightly bigger font for headers */
+    .data-table {
+        margin: 0 auto; /* Center table on mobile screens */
     }
 }
