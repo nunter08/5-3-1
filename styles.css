@@ -1,48 +1,45 @@
 /* General container styles */
 .container {
+    width: 100%;
+    max-width: 100%;
     padding: 20px;
-    max-width: 100%; /* Prevent the container from overflowing */
     margin: 0 auto;
     box-sizing: border-box;
 }
 
-/* Wrap the table in a scrollable container */
+/* Table Wrapper */
 .table-wrapper {
     width: 100%;
-    overflow-x: auto; /* Allows horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+    overflow-x: hidden; /* Hide horizontal scroll */
 }
 
+/* Basic Table Styling */
 .data-table {
     width: 100%;
-    table-layout: fixed; /* Keeps table structure intact */
+    table-layout: auto; /* Ensure it adjusts based on content */
     border-collapse: collapse;
 }
 
 .data-table td, .data-table th {
-    padding: 8px;
+    padding: 6px; /* Reduce padding for smaller screens */
+    font-size: 14px; /* Reduce font size */
     text-align: center;
-    word-wrap: break-word; /* Prevent words from overflowing */
+    border: 1px solid #ddd; /* Optional: add borders to make it clearer */
 }
 
-/* Prevent the table from overflowing its container */
+/* On smaller screens (Mobile and smaller tablets) */
 @media (max-width: 767px) {
-    .table-wrapper {
-        padding: 0 10px; /* Padding to ensure it's not flush against screen edges */
-    }
-
-    .data-table {
-        width: 100%;
-        table-layout: auto; /* Adjust table layout */
-    }
-
-    /* Optional: Adjust font size on smaller screens */
     .data-table td, .data-table th {
-        font-size: 14px; /* Slightly smaller font on mobile */
-        padding: 6px; /* Reduce padding slightly on mobile */
+        font-size: 12px; /* Smaller font size for mobile */
+        padding: 4px 6px; /* Smaller padding */
     }
 
+    /* Optional: Adjust table width for smaller screens */
     .data-table {
-        margin: 0 auto; /* Center table on mobile screens */
+        width: 100%; /* Table takes full width */
+    }
+
+    .container {
+        padding: 10px; /* Less padding to fit everything */
     }
 }
