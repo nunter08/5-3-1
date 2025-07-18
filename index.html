@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input and Dynamic Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Note at the top of the page -->
+        <div class="note">
+            <p>Enter 1RM and multiplier for training max in the input field and click the "Value" button to update the table entries. By default, the training max multiplier is set at 0.9.</p>
+        </div>
+
+        <!-- Flex Container for Inputs and Button -->
+        <div class="input-container">
+            
+            <!-- Input Fields -->
+            <input type="text" id="inputField" placeholder="1RM" class="input-field">
+            <input type="text" id="inputField2" placeholder="TM multiplier" class="input-field">
+            <input type="text" id="outputField" class="output-field" placeholder="" readonly style="border: none;">
+        </div>
+
+        <!-- Buttons -->
+        <button onclick="resetTable()">% of Training Max</button>
+        <button onclick="updateTable()">Value</button>
+        
+        <!-- 5x5 Table -->
+        <table class="data-table">
+            <tbody>
+                <tr>
+                    <td>Week</td>
+                    <td id="cell-1-1">Type</td>
+                    <td id="cell-1-2">Working Set 1</td>
+                    <td id="cell-1-3">Working Set 2</td>
+                    <td id="cell-1-4">Working Set 3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td style="font-weight: bold;" id="cell-2-1">5/5/5+</td>
+                    <td id="cell-2-2">65%</td>
+                    <td id="cell-2-3">75%</td>
+                    <td id="cell-2-4">85%</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td style="font-weight: bold;" id="cell-3-1">3/3/3+</td>
+                    <td id="cell-3-2">70%</td>
+                    <td id="cell-3-3">80%</td>
+                    <td id="cell-3-4">90%</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td style="font-weight: bold;" id="cell-4-1">5/3/1+</td>
+                    <td id="cell-4-2">65%</td>
+                    <td id="cell-4-3">75%</td>
+                    <td id="cell-4-4">85%</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td style="font-weight: bold;" id="cell-5-1">5/5/5+</td>
+                    <td id="cell-5-2">40%</td>
+                    <td id="cell-5-3">50%</td>
+                    <td id="cell-5-4">60%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
