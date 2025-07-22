@@ -12,7 +12,7 @@
     <div class="container">
         <!-- Note at the top of the page -->
         <div class="note">
-            <p>This web app is a glorified calculator to aid in running a 5-3-1 training programme. Percentages are based on the Training Max which is 90% of your actual 1RM. Input your 1RM and Training Max multiplier (optional, defaults to 0.9) and tap the buttons to recalculate.</p>
+            <p>Enter 1RM and multiplier for training max in the input field and click the "Value" button to update the table entries. By default, the training max multiplier is set at 0.9.</p>
         </div>
 
         <!-- Flex Container for Inputs and Button -->
@@ -27,7 +27,7 @@
         <!-- Buttons -->
         <button onclick="resetTable()">% of Training Max</button>
         <button onclick="updateTable()">Value</button>
-        <button onclick="updateTable2()">Weight per side</button>
+        <button onclick="updateTable2()">Rounded (plates)</button>
 
         
         <!-- 5x5 Table -->
@@ -63,7 +63,7 @@
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td style="font-weight: bold;" id="cell-5-1">5/5/5</td>
+                    <td style="font-weight: bold;" id="cell-5-1">5/5/5+</td>
                     <td id="cell-5-2">40%</td>
                     <td id="cell-5-3">50%</td>
                     <td id="cell-5-4">60%</td>
