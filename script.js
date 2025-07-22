@@ -102,49 +102,63 @@ function updateTable2() {
     const trainingMax = userInput * userMultiplier;
     document.getElementById('outputField').value = `Training Max: ${trainingMax.toFixed(2)}`;
 
-    // Calculate working set values and apply rounding
-    const workingSet1 = (roundToNearestTwoPointFive(trainingMax * 0.65)-20)/2;
-    const workingSet2 = (roundToNearestTwoPointFive(trainingMax * 0.75)-20)/2; 
-    const workingSet3 = (roundToNearestTwoPointFive(trainingMax * 0.85)-20)/2; 
-    const workingSet4 = (roundToNearestTwoPointFive(trainingMax * 0.70)-20)/2; 
-    const workingSet5 = (roundToNearestTwoPointFive(trainingMax * 0.80)-20)/2; 
-    const workingSet6 = (roundToNearestTwoPointFive(trainingMax * 0.90)-20)/2;
-    const workingSet7 = (roundToNearestTwoPointFive(trainingMax * 0.75)-20)/2; 
-    const workingSet8 = (roundToNearestTwoPointFive(trainingMax * 0.85)-20)/2; 
-    const workingSet9 = (roundToNearestTwoPointFive(trainingMax * 0.95)-20)/2; 
-    const workingSet10 = (roundToNearestTwoPointFive(trainingMax * 0.40)-20)/2; 
-    const workingSet11 = (roundToNearestTwoPointFive(trainingMax * 0.50)-20)/2; 
-    const workingSet12 = (roundToNearestTwoPointFive(trainingMax * 0.60)-20)/2;     
+    // Calculate weight with rounding
+    const roundedweight1 = roundToNearestTwoPointFive(trainingMax * 0.65);
+    const roundedweight2 = roundToNearestTwoPointFive(trainingMax * 0.75); 
+    const roundedweight3 = roundToNearestTwoPointFive(trainingMax * 0.85); 
+    const roundedweight4 = roundToNearestTwoPointFive(trainingMax * 0.70); 
+    const roundedweight5 = roundToNearestTwoPointFive(trainingMax * 0.80); 
+    const roundedweight6 = roundToNearestTwoPointFive(trainingMax * 0.90);
+    const roundedweight7 = roundToNearestTwoPointFive(trainingMax * 0.75); 
+    const roundedweight8 = roundToNearestTwoPointFive(trainingMax * 0.85); 
+    const roundedweight9 = roundToNearestTwoPointFive(trainingMax * 0.95); 
+    const roundedweight10 = roundToNearestTwoPointFive(trainingMax * 0.40); 
+    const roundedweight11 = roundToNearestTwoPointFive(trainingMax * 0.50); 
+    const roundedweight12 = roundToNearestTwoPointFive(trainingMax * 0.60); 
+    
+    // Calculate weight per side values with rounding
+    const weightperside1 = (roundToNearestTwoPointFive(trainingMax * 0.65)-20)/2;
+    const weightperside2 = (roundToNearestTwoPointFive(trainingMax * 0.75)-20)/2; 
+    const weightperside3 = (roundToNearestTwoPointFive(trainingMax * 0.85)-20)/2; 
+    const weightperside4 = (roundToNearestTwoPointFive(trainingMax * 0.70)-20)/2; 
+    const weightperside5 = (roundToNearestTwoPointFive(trainingMax * 0.80)-20)/2; 
+    const weightperside6 = (roundToNearestTwoPointFive(trainingMax * 0.90)-20)/2;
+    const weightperside7 = (roundToNearestTwoPointFive(trainingMax * 0.75)-20)/2; 
+    const weightperside8 = (roundToNearestTwoPointFive(trainingMax * 0.85)-20)/2; 
+    const weightperside9 = (roundToNearestTwoPointFive(trainingMax * 0.95)-20)/2; 
+    const weightperside10 = (roundToNearestTwoPointFive(trainingMax * 0.40)-20)/2; 
+    const weightperside11 = (roundToNearestTwoPointFive(trainingMax * 0.50)-20)/2; 
+    const weightperside12 = (roundToNearestTwoPointFive(trainingMax * 0.60)-20)/2;     
 
     // Break down each working set value into plates
     const plateCombinations = [
-        breakDownValue(workingSet1, plateValues),
-        breakDownValue(workingSet2, plateValues),
-        breakDownValue(workingSet3, plateValues),
-        breakDownValue(workingSet4, plateValues),
-        breakDownValue(workingSet5, plateValues),
-        breakDownValue(workingSet6, plateValues),
-        breakDownValue(workingSet7, plateValues),
-        breakDownValue(workingSet8, plateValues),
-        breakDownValue(workingSet9, plateValues),
-        breakDownValue(workingSet10, plateValues),
-        breakDownValue(workingSet11, plateValues),
-        breakDownValue(workingSet12, plateValues)
+        breakDownValue(weightperside1, plateValues),
+        breakDownValue(weightperside2, plateValues),
+        breakDownValue(weightperside3, plateValues),
+        breakDownValue(weightperside4, plateValues),
+        breakDownValue(weightperside5, plateValues),
+        breakDownValue(weightperside6, plateValues),
+        breakDownValue(weightperside7, plateValues),
+        breakDownValue(weightperside8, plateValues),
+        breakDownValue(weightperside9, plateValues),
+        breakDownValue(weightperside10, plateValues),
+        breakDownValue(weightperside11, plateValues),
+        breakDownValue(weightperside12, plateValues)
     ];
 
     // Insert the values and their plate combinations into the HTML table
-    document.getElementById('cell-2-2').innerHTML = `<span class="left">${workingSet1.toFixed(2)}<br>(${plateCombinations[0].join(', ')})</span>`;
-    document.getElementById('cell-2-3').innerHTML = `<span class="left">${workingSet2.toFixed(2)}<br>(${plateCombinations[1].join(', ')})</span>`;
-    document.getElementById('cell-2-4').innerHTML = `<span class="left">${workingSet3.toFixed(2)}<br>(${plateCombinations[2].join(', ')})</span>`;
-    document.getElementById('cell-3-2').innerHTML = `<span class="left">${workingSet4.toFixed(2)}<br>(${plateCombinations[3].join(', ')})</span>`;
-    document.getElementById('cell-3-3').innerHTML = `<span class="left">${workingSet5.toFixed(2)}<br>(${plateCombinations[4].join(', ')})</span>`;
-    document.getElementById('cell-3-4').innerHTML = `<span class="left">${workingSet6.toFixed(2)}<br>(${plateCombinations[5].join(', ')})</span>`;
-    document.getElementById('cell-4-2').innerHTML = `<span class="left">${workingSet7.toFixed(2)}<br>(${plateCombinations[6].join(', ')})</span>`;
-    document.getElementById('cell-4-3').innerHTML = `<span class="left">${workingSet8.toFixed(2)}<br>(${plateCombinations[7].join(', ')})</span>`;
-    document.getElementById('cell-4-4').innerHTML = `<span class="left">${workingSet9.toFixed(2)}<br>(${plateCombinations[8].join(', ')})</span>`;
-    document.getElementById('cell-5-2').innerHTML = `<span class="left">${workingSet10.toFixed(2)}<br>(${plateCombinations[9].join(', ')})</span>`;
-    document.getElementById('cell-5-3').innerHTML = `<span class="left">${workingSet11.toFixed(2)}<br>(${plateCombinations[10].join(', ')})</span>`;
-    document.getElementById('cell-5-4').innerHTML = `<span class="left">${workingSet12.toFixed(2)}<br>(${plateCombinations[11].join(', ')})</span>`;
+    document.getElementById('cell-2-2').innerHTML = `<span class="left">${roundedweight1}<br>(${plateCombinations[0].join(', ')})</span>`;
+    document.getElementById('cell-2-3').innerHTML = `<span class="left">${roundedweight2}<br>(${plateCombinations[1].join(', ')})</span>`;
+    document.getElementById('cell-2-4').innerHTML = `<span class="left">${roundedweight3}<br>(${plateCombinations[2].join(', ')})</span>`;
+    document.getElementById('cell-3-2').innerHTML = `<span class="left">${roundedweight4}<br>(${plateCombinations[3].join(', ')})</span>`;
+    document.getElementById('cell-3-3').innerHTML = `<span class="left">${roundedweight5}<br>(${plateCombinations[4].join(', ')})</span>`;
+    document.getElementById('cell-3-4').innerHTML = `<span class="left">${roundedweight6}<br>(${plateCombinations[5].join(', ')})</span>`;
+    document.getElementById('cell-4-2').innerHTML = `<span class="left">${roundedweight7}<br>(${plateCombinations[6].join(', ')})</span>`;
+    document.getElementById('cell-4-3').innerHTML = `<span class="left">${roundedweight8}<br>(${plateCombinations[7].join(', ')})</span>`;
+    document.getElementById('cell-4-4').innerHTML = `<span class="left">${roundedweight9}<br>(${plateCombinations[8].join(', ')})</span>`;
+    document.getElementById('cell-5-2').innerHTML = `<span class="left">${roundedweight10}<br>(${plateCombinations[9].join(', ')})</span>`;
+    document.getElementById('cell-5-3').innerHTML = `<span class="left">${roundedweight11}<br>(${plateCombinations[10].join(', ')})</span>`;
+    document.getElementById('cell-5-4').innerHTML = `<span class="left">${roundedweight12}<br>(${plateCombinations[11].join(', ')})</span>`;
 }
 
 // Reset all table cells to their default values
